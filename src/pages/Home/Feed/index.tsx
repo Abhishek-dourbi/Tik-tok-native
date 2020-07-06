@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Image, Animated, Easing } from 'react-native';
 
 import { FontAwesome, AntDesign } from '@expo/vector-icons';
@@ -33,9 +33,25 @@ interface Item {
 interface Props {
   play: boolean;
   item: Item;
+  active: number;
 }
 
-const Feed: React.FC<Props> = ({ play, item }) => {
+const Feed: React.FC<Props> = ({ play, item, active }) => {
+  const videoRef = React.useRef(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+
+  useEffect(() => {
+    if (item.id === active) {
+      (async () => {
+        await videoRef?.current.replayAsync();
+      })();
+    } else {
+      (async () => {
+        await videoRef?.current.stopAsync();
+      })();
+    }
+  }, [active]);
+
   const spinValue = new Animated.Value(0);
 
   Animated.loop(
@@ -64,9 +80,21 @@ const Feed: React.FC<Props> = ({ play, item }) => {
           height: '70%',
         }}
       />
-      <Container>
+      <Container
+        activeOpacity={1}
+        underlayColor={'transparent'}
+        onPress={async () => {
+          if (isPlaying) {
+            await videoRef?.current.pauseAsync();
+          } else {
+            await videoRef?.current.playAsync();
+          }
+          setIsPlaying(!isPlaying);
+        }}
+      >
         <Video
           source={{ uri: item.uri }}
+          ref={videoRef}
           rate={1.0}
           volume={1.0}
           isMuted={false}
@@ -123,7 +151,7 @@ const Feed: React.FC<Props> = ({ play, item }) => {
               borderColor: '#292929',
               transform: [
                 {
-                  rotate: play ? rotateProp : 0,
+                  rotate: (play && isPlaying) ? rotateProp : 0,
                 },
               ],
             }}

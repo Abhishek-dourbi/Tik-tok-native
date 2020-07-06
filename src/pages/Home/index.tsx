@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View } from 'react-native';
 
 import ViewPager from '@react-native-community/viewpager';
@@ -32,7 +32,11 @@ const Home: React.FC = () => {
       >
         {server.feed.map(item => (
           <View key={item.id}>
-            <Feed item={item} play={Number(item.id) === active} />
+            <Feed
+              item={item}
+              active={active}
+              play={Number(item.id) === active}
+            />
           </View>
         ))}
       </ViewPager>

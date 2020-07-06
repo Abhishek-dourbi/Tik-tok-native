@@ -7,7 +7,7 @@
       "music": "Introducing Chromecast. The easiest way to enjoy",
       "likes": 9444,
       "comments": 6340,
-      "uri": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
+      "uri": "https://firebasestorage.googleapis.com/v0/b/desitalent-39759.appspot.com/o/uploads%2Fvideo%2F0.mp4?alt=media"
     },
     {
       "id": 1,
@@ -16,7 +16,34 @@
       "music": "HBO GO now works with Chromecast",
       "likes": 8411,
       "comments": 2240,
-      "uri": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+      "uri": "https://firebasestorage.googleapis.com/v0/b/desitalent-39759.appspot.com/o/uploads%2Fvideo%2F1.mp4?alt=media"
+    },
+    {
+      "id": 2,
+      "uri": "https://firebasestorage.googleapis.com/v0/b/desitalent-39759.appspot.com/o/uploads%2Fvideo%2F2.mp4?alt=media",
+      "likes": 1002,
+      "username": "@matheuscastroweb",
+      "tags": "#reactnative #testvideo #tiktok #git #development #github #clone #react",
+      "music": "HBO GO now works with Chromecast",
+      "comments": 2240
+    },
+    {
+      "id": 3,
+      "uri": "https://firebasestorage.googleapis.com/v0/b/desitalent-39759.appspot.com/o/uploads%2Fvideo%2F3.mp4?alt=media",
+      "likes": 1002,
+      "username": "@matheuscastroweb",
+      "tags": "#reactnative #testvideo #tiktok #git #development #github #clone #react",
+      "music": "HBO GO now works with Chromecast",
+      "comments": 2240
+    },
+    {
+      "id": 4,
+      "uri": "https://firebasestorage.googleapis.com/v0/b/desitalent-39759.appspot.com/o/uploads%2Fvideo%2F4.mp4?alt=media",
+      "likes": 1002,
+      "username": "@matheuscastroweb",
+      "tags": "#reactnative #testvideo #tiktok #git #development #github #clone #react",
+      "music": "HBO GO now works with Chromecast",
+      "comments": 2240
     }
   ]
 }
